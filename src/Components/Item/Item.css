@@ -1,0 +1,14 @@
+.producto {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    height:600px;
+}
+
+.producto img{
+    height:300px;
+}
+
+.producto h2{
+    text-align: center;
+}

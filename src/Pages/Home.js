@@ -1,13 +1,10 @@
-
+import Items from "../Components/Item/Item";
+import "./Home.css";
 
 const Home = () => {
     return (
-        <div>
-            <section id="categorias">
-
-                
-            </section>
-        
+        <div className="itemContainer">
+            <Items/>
         </div>
     )
     }
