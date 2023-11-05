@@ -1,0 +1,11 @@
+.carrito {
+    width: 20px;
+    padding:3px;
+}
+
+.iconoCarrito{
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    height:25px;
+}
