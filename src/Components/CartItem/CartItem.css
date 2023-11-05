@@ -1,0 +1,28 @@
+.cart-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding:10px;
+    margin: 5px;
+    background-color:#d5bdaf;
+    border-radius: 5px;
+    width:800px;
+}
+
+.cart-item img{
+    height: 80px;
+    width:80px;
+}
+
+h2 {
+    color:#76695d;
+    text-align: center;
+}
+
+.btn-borrar {
+    height:20px;
+    margin-top: 20px;
+    border: none;
+    background-color: none;
+    cursor:pointer;
+}

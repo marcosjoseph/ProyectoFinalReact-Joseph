@@ -29,6 +29,7 @@ nav {
 
 .logo {
     width: 100px;
+    padding: 0px 10px;
 }
 
 .logo:hover {

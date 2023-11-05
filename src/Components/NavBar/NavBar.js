@@ -10,10 +10,8 @@ const NavBar = () => {
             <nav>
                 <a href="https://www.instagram.com/groot.woodwork/" target="_blank"> <img src={Logo} className="logo"/> </a>
             
-                <div id="menu-botones">
-                    <button><Link to="/">Home</Link></button>
-                </div>
-
+                <button id="menu-botones"><Link to="/">Home</Link></button>
+            
                 <CartWidget />
             </nav>
         </header>

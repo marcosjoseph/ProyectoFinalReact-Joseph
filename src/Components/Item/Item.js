@@ -6,7 +6,19 @@ import "./Item.css";
 
 const Items = () => {
 
-const {itemList, setItemList} = useContext(dataContext)
+const {itemList, setItemList, cart, setCart, setCountProducts, countProducts} = useContext(dataContext)
+
+const buyProducts = (item) => {
+    
+    if(cart.find(product=> product.id === item.id)) {
+        const products = cart.map( product => product.id === item.id ? {...product,cantidad: product.cantidad+1} : product);
+    
+        return setCart([...products])
+            
+    }
+
+    setCart([...cart,item])
+};
 
 const itemsCollectionRef = collection(dataBaseFirestore, "Items");
 
@@ -23,15 +35,15 @@ const itemsCollectionRef = collection(dataBaseFirestore, "Items");
     },[])
 
     return(
-        <div>
+        <div className="itemContainer">
             {itemList.map((item)=>(
-                <div className="producto">
+                <div className="item" key={item.id}>
                     <h2>{item.nombre}</h2>
                     <img src={item.imagen}/>
                     <h3>{item.descripcion}</h3>
-                    <h3>{item.precio}</h3>
-                    <h3>{item.stock}</h3>
-                    <button>Agregar al Carrito</button>
+                    <h3>Precio Unitario: ${item.precio}</h3>
+                    <h3>Stock Disponible: {item.stock}</h3>
+                    <button className="btn-agregar" onClick={()=> buyProducts(item)}>Agregar al Carrito</button>
                 </div>
             ))}
 
