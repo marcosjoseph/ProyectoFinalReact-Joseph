@@ -3,9 +3,15 @@ import {dataContext} from "../../Context/DataContext";
 import "./CartItem.css";
 
 const CartItems = () => {
-    const {cart,montoSubtotal} = useContext(dataContext);
+    const {cart,setCart,setCountProducts,countProducts,total,setTotal} = useContext(dataContext);
 
-    const borrarProducto = () =>{};
+    const borrarProducto = (cartItem) =>{
+        const nuevoCarrito = cart.filter(item => item.id !== cartItem.id );
+
+        setTotal(total - cartItem.precio * cartItem.cantidad);
+        setCountProducts(countProducts-cartItem.cantidad);
+        setCart(nuevoCarrito)
+    };
 
     return (
         <div>
@@ -15,7 +21,7 @@ const CartItems = () => {
                     <h3>{cartItem.nombre}</h3>
                     <h4>Cantidad:{cartItem.cantidad}</h4>
                     <h4>Precio Unitario: ${cartItem.precio}</h4>
-                    <h4>Subtotal: ${montoSubtotal}</h4>
+                    <h4>Subtotal: ${cartItem.cantidad * cartItem.precio}</h4>
                     <button className="btn-borrar" onClick={()=> borrarProducto(cartItem)}>❌</button>
                 </div>))}
         </div>

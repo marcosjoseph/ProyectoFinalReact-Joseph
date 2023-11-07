@@ -6,7 +6,7 @@ import "./Cart.css";
 
 
 const Cart = () => {
-    const {montoTotal,cart,clearCart, total} = useContext(dataContext);
+    const {montoTotal,cart,clearCart, total, setCountProducts} = useContext(dataContext);
 
         if(cart.length>0) {
         

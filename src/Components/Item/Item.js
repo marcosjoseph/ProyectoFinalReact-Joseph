@@ -6,17 +6,21 @@ import "./Item.css";
 
 const Items = () => {
 
-const {itemList, setItemList, cart, setCart, setCountProducts, countProducts} = useContext(dataContext)
+const {itemList, setItemList, cart, setCart, setCountProducts, countProducts, total, setTotal} = useContext(dataContext)
 
 const buyProducts = (item) => {
     
     if(cart.find(product=> product.id === item.id)) {
         const products = cart.map( product => product.id === item.id ? {...product,cantidad: product.cantidad+1} : product);
-    
+        
+        setTotal(total+ item.precio * item.cantidad)
+        setCountProducts(countProducts+item.cantidad)
         return setCart([...products])
             
     }
 
+    setTotal(total+ item.precio * item.cantidad)
+    setCountProducts(countProducts+item.cantidad)
     setCart([...cart,item])
 };
 
