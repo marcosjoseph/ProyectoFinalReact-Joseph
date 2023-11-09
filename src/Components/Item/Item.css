@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height:500px;
+    height:550px;
     width:300px;
     background-color: #d5bdaf;
     color:#76695d;
@@ -33,12 +33,13 @@
 }
 
 .btn-agregar {
-    background-color:#f5ebe0;
+    background-color:#d5bdaf;
     color:#76695d;
-    border: none;
+    border-color: #76695d;
     border-radius: 5px;
     padding: 4px;
     cursor: pointer;
+    font-weight:600;
 }
 
 .btn-agregar:hover {

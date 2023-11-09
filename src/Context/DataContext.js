@@ -11,6 +11,17 @@ export const DataProvider = ({children}) => {
     const [total, setTotal] = useState(0);
     
 
+    // const addItem = (item, quantity) => {
+    //     if(!isInCart(item.id)) {
+    //         setCart(prev => [...prev, {...item, quantity}])
+    //     }
+    // }
+
+    // const isInCart = (itemId) => {
+    //     return cart.some(prod => prod.id === itemId)
+    // };
+    
+
     const clearCart = () => {
         setCart([]); 
         setCountProducts(0)

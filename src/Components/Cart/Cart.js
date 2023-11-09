@@ -6,7 +6,7 @@ import "./Cart.css";
 
 
 const Cart = () => {
-    const {montoTotal,cart,clearCart, total, setCountProducts} = useContext(dataContext);
+    const {cart,clearCart, total} = useContext(dataContext);
 
         if(cart.length>0) {
         
@@ -16,7 +16,7 @@ const Cart = () => {
                 <CartItem/>
                 <h4 className="cart-total">Valor Total: ${total}</h4>   
                 <button onClick={clearCart}>Vaciar Carrito</button>
-                <button>Finalizar Compra</button> 
+                <button><Link to="/Checkout">Finalizar Compra</Link></button> 
             </div>
         )
     }
