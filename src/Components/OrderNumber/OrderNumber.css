@@ -1,0 +1,14 @@
+
+.OrderNumber {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:300px;
+    margin-top:50px;
+}
+
+.OrderNumber h1{
+    margin: 5px;
+    border-radius: 5px;
+}

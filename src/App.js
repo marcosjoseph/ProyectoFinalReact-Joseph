@@ -3,6 +3,7 @@ import Home from "./Pages/Home";
 import Error from "./Pages/Error";
 import Cart from "./Components/Cart/Cart";
 import Checkout from "./Pages/Checkout";
+import OrderNumber from "./Components/OrderNumber/OrderNumber";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {DataProvider} from "./Context/DataContext";
@@ -17,6 +18,7 @@ function App() {
               <Route index element={<Home/>}/>
               <Route path="/cart" element={<Cart/>}/>
               <Route path="/checkout" element={<Checkout/>}/>
+              <Route path="/orderNumber" element={<OrderNumber/>}/>
               <Route path="*" element={<Error/>}/>
             </Route>
           </Routes>
