@@ -9,6 +9,7 @@ export const DataProvider = ({children}) => {
     const [cart, setCart] = useState([]);
     const [countProducts, setCountProducts] = useState(0);
     const [total, setTotal] = useState(0);
+    const [order, setOrder] = useState(0)
     
 
     // const addItem = (item, quantity) => {
@@ -31,7 +32,7 @@ export const DataProvider = ({children}) => {
     // const montoSubtotal = cart.reduce((acc,el)=>acc+(el.precio * el.cantidad),0)
 
         return (
-        <dataContext.Provider value={{itemList,setItemList, cart, setCart, countProducts, setCountProducts, total, setTotal,clearCart}}>
+        <dataContext.Provider value={{itemList,setItemList, cart, setCart, countProducts, setCountProducts, total, setTotal,clearCart, order,setOrder}}>
             {children}
         </dataContext.Provider>
     )

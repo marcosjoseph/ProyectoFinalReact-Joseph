@@ -8,7 +8,7 @@ import {collection, addDoc} from "firebase/firestore";
 
 const CheckoutForm = () => {
 
-    const {setCountProducts} = useContext(dataContext);
+    const {setCountProducts, setOrder,order} = useContext(dataContext);
 
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('');
@@ -17,11 +17,14 @@ const CheckoutForm = () => {
     const onSubmitUser = async (event) => {
         event.preventDefault()
 
+        const orderId = order+1;
+
+        setOrder(orderId)
+        setCountProducts(0);
+
         const userCollectionRef = collection(dataBaseFirestore,"Usuarios");
 
-        await addDoc(userCollectionRef, {Nombre:name, Telefono:phone, Mail:email})
-        
-        setCountProducts(0);
+        await addDoc(userCollectionRef, {Nombre:name, Telefono:phone, Mail:email, Order:orderId})
     }
     
 
